@@ -1,0 +1,223 @@
+/* Definição de variáveis de cores no :root */
+:root {
+    --primary-color: #61dafb;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-footer-bg: #333;
+    --card-bg: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: var(--header-footer-bg);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav a {
+    margin: 0 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 24px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.job {
+    background-color: var(--card-bg);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    position: relative;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.job-header img {
+    max-width: 100px; /* Ajuste conforme o tamanho desejado */
+    max-height: 100px;
+    margin-left: 20px;
+}
+
+
+/* Adicionando transições e efeitos de hover nas seções interativas */
+.job, .skill, .repo-item {
+    background-color: var(--card-bg);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.job:hover, .skill:hover, .repo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--card-shadow-hover);
+    background-color: #f0f0f0;
+}
+
+.job ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Define 5 colunas de tamanhos iguais */
+    gap: 20px;
+}
+
+.skill {
+    text-align: center;
+}
+
+.skill img {
+    max-width: 100%;
+    max-height: 80px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+
+/* Estilo para os repositórios em formato de cards */
+/* Estilos para os itens de repositório */
+#repos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.repo-item h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.repo-item p {
+    margin-bottom: 10px;
+}
+
+.repo-item ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    list-style-type: disc;
+}
+
+.repo-item ul li {
+    margin-bottom: 5px;
+}
+
+footer {
+    background-color: var(--header-footer-bg);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+.contact-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-links img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.contact-links a:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas para telas médias */
+    }
+}
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas para telas pequenas */
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas muito pequenas */
+    }
+}
+
+@media (max-width: 400px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 coluna para telas menores */
+    }
+}
